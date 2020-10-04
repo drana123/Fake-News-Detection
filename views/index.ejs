@@ -1,0 +1,35 @@
+<% include partials/header %>
+
+<div class="ui main text container">
+	<div class="ui huge header">News</div>
+	<div class="ui top attached segment">
+		<div class="ui divided items">
+			<% news.forEach(function(news){ %>
+				<% if(news.status){ %>
+					<div class="item">
+						<div class="image">
+							<img src="<%= news.image %>">
+						</div>
+						<div class="content">
+							<a class="header" href="/news/<%= news._id %>"><%= news.title %></a>
+							<div class="meta">
+								<span><%= news.created.toDateString() %></span>
+							</div>
+							<div class="meta">
+								<span>Status: <%= news.status %></span>
+							</div>
+							<div class="description">
+								<p><%= news.content.substring(0, 100) %>...</p>
+							</div>
+							<div class="extra">
+								<a class="ui floated primary button" href="/news/<%= news._id %>">Read More<i class="right chevron icon"></i></a>
+							</div>
+						</div>
+					</div>
+				<% } %>
+			<% }); %>
+		</div>
+	</div>
+</div>
+
+<% include partials/footer %>

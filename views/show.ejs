@@ -1,0 +1,26 @@
+<% include ./partials/header %>
+
+<div class="ui main text container segment">
+	<div class="ui huge header"><%= news.title %></div>
+	<div>
+		<h2>STATUS: <span><%= news.status %></span></h2>
+	</div>
+	<div class="ui top attached">
+		<div class="item">
+			<img class="ui centered rounded image" src="<%= news.image %>">
+		</div>
+		<div class="content">
+			<span><%= news.created.toDateString() %></span>
+		</div>
+		<div class="content">
+			<span>Source: <%= news.source %> </span>
+		</div>
+		<br>
+		<div class="description">
+			<p><%= news.content %></p>
+		</div>
+
+	</div>	
+</div>
+
+<% include ./partials/footer %>

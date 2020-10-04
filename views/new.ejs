@@ -1,0 +1,35 @@
+<% include partials/header%>
+
+<div class="ui main text container segment">
+	<div class="ui huge header">Tell Us The Details</div>
+	<form class="ui form" action="/news" method="POST">
+		<div class="field">
+			<label>Title</label>
+			<input type="text" required="true" name="news[title]" placeholder="Title">
+		</div>
+		<div class="field">
+			<label>Image</label>
+			<input type="text" name="news[image]" placeholder="Image Url">
+		</div>
+		<div class="field">
+			<label>Source</label>
+			<input type="text" name="news[source]" placeholder="Source Name">
+		</div>
+		<div class="field">
+			<label>News Content</label>
+			<textarea required name="news[content]"></textarea>
+		</div>
+		<div class="ui equal width center aligned padded grid">
+			<div class="eight wide column">
+				<input type="submit" name="action" value="Quick Analysis" class="ui primary button" ></input>
+			</div>
+			<div class="eight wide column">
+				<input type="submit" name="action" value="Deep Analysis" class="ui primary button" ></input>
+			</div>
+		</div>
+		
+		
+	</form>
+</div>
+
+<% include partials/footer %>
